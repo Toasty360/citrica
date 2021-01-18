@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" cont  ent="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js">
+
+    <title>Citrica</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <a href="#" class="logo">Citrica.</a>
+            <ul id="links">
+                <li><a href="#home" onclick="hideMenu()">Home</a></li>
+                <li><a href="#intro" onclick="hideMenu()">Introduction</a></li>
+                <li><a href="#work" onclick="hideMenu()">Work</a></li>
+                <li><a href="#contact" onclick="hideMenu()">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <span id="menu">≡</span>
+        </div>
+        <div class="continer" id="home">
+            <div class="center">
+                <h1>
+                    The Citrica!
+                </h1>
+                <p>A Work By Vyking18</p>
+            </div>
+            <div class="box">
+                <div class="inbox"></div>
+            </div>
+
+        </div>
+        <div class="continer1" id="intro">
+            <div class="div-img">
+                <img src="./img/side1.jpg" alt="image">
+            </div>
+            <div class="intro">
+                <h1>Introduction</h1>
+                <hr>
+                <p>The citrica is <strong>CSS template</strong> built on Bootstrap v4.1.3 and this is a little 
+                     layout that you can use for your websites. Please tell your friends about our site TemplateMo. Thank you. Curabitur dapibus tristique
+                    enim a imperdiet. Etiam tristique sem sed condimentum posuere.</p>
+
+                <a href="#">Read More>></a>
+            </div>
+        </div>
+        <div class="continer2" id="work">
+            <h1>Our Work</h1>
+            <p>"Curabitur ac orci ac lorem blandit volutpat. Sed ac sodales nibh, ut porttitor elit. Sed id dui mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia." Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aliquam laudantium autem saepe deleniti repellendus magnam, doloremque ratione dolorum suscipit quam.
+            </p>
+            <div class="images">
+                <div class="hovereffect">
+                    <img src="./img/list1.jpg" alt="img1">
+                    <div class="overlay">
+                        <h2>
+                            First <br> Honey <br> Now
+                        </h2>
+                    </div>
+                </div>
+                <div class="hovereffect">
+                    <img src="./img/list2.jpg" alt="img1">
+                    <div class="overlay">
+                        <h2>
+                            First <br> Honey <br> Now
+                        </h2>
+                    </div>
+                </div>
+                <div class="hovereffect">
+                    <img src="./img/list3.jpg" alt="img1">
+                    <div class="overlay">
+                        <h2>
+                            First <br> Honey <br> Now
+                        </h2>
+                    </div>
+                </div>
+                <div class="hovereffect">
+                    <img src="./img/list4.jpg" alt="img1">
+                    <div class="overlay">
+                        <h2>
+                            First <br> Honey <br> Now
+                        </h2>
+                    </div>
+                </div>
+                <div class="hovereffect">
+                    <img src="./img/list5.jpg" alt="img1">
+                    <div class="overlay">
+                        <h2>
+                            First <br> Honey <br> Now
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <div class="contact-details">
+            <h2>
+                Citrica.
+            </h2>
+            <div class="list">
+                <a href="#">about citrica.</a>
+                <a href="#">career</a>
+                <a href="#">press</a>
+                <a href="#">customer care</a>
+                <a href="#">foodservice</a>
+            </div>
+            <div class="signup">
+                <h5>Get the freshest citrica news</h5>
+                <input type="email" name="email" placeholder="Your mail here" autocomplete="off" id="email"><input type="submit" value="Subscribe" id="sbtn">
+            </div>
+            <div class="foot">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        // window.onscroll = function(ev) {
+        //     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        //         // you're at the bottom of the page
+        //             document.querySelector('.header').classList.add('removeMe');
+        //             console.log("sq")
+        //     }
+        //     else{
+        //         document.querySelector('.header').classList.remove('removeMe');
+        //     }
+        // };
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            console.log(scrolled)
+            if(document.querySelector('#links').classList.contains('show')==true){
+            //          if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            //         // you're at the bottom of the page
+            //         document.querySelector('.header').classList.add('removeMe');
+            //         console.log("sq")
+            // }
+            // else{
+            //     document.querySelector('.header').classList.remove('removeMe');
+            // }
+                return;
+            }
+            if (scrolled >= 2444) {
+                document.querySelector('.header').classList.add('removeMe');
+            } else {
+                document.querySelector('.header').classList.remove('removeMe');
+            }
+            if (scrolled >= 163) {
+                document.querySelector('.header').classList.add('change');
+            } else {
+                document.querySelector('.header').classList.remove('change');
+            }
+        })
+
+        var menuicon=document.querySelector('#menu')
+        var menu = document.querySelector('#links')
+        var flag=false;
+        menuicon.addEventListener('click',()=>{
+            if(flag==false)
+            {
+                menuicon.innerHTML='X';
+                menu.classList.add('show');
+                flag=true;
+            }
+            else{
+                menuicon.innerHTML='≡';
+                menu.classList.remove('show');
+                flag=false;
+            }
+        })
+
+        function hideMenu(){
+            menuicon.innerHTML='≡';
+            menu.classList.remove('show');
+            flag=false;
+        }
+
+    </script>
+</body>
+
+</html>
